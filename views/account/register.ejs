@@ -1,0 +1,41 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+  <% } else { %>
+    <%- res.redirect('/') %>
+  <% } %>
+  
+  <%- messages() %>
+  
+  <% if (errors) { %>
+    <ul class="notice">
+      <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+  
+  <div class="form-container">
+    <form action="/account/register" method="post" class="formElement">
+      <label for="accountFirstname">First name:</label>
+      <input type="text" name="account_firstname" id="accountFirstname" required 
+             value="<%= locals.account_firstname || '' %>"><br>
+  
+      <label for="accountLastname">Last name:</label>
+      <input type="text" name="account_lastname" id="accountLastname" required 
+             value="<%= locals.account_lastname || '' %>"><br>
+  
+      <label for="account_emailaddress">Email Address:</label>
+      <input type="email" name="account_email" id="account_emailaddress" 
+             title="Enter a valid email address" required 
+             value="<%= locals.account_email || '' %>"><br>
+  
+      <label for="account_password">Password:</label>
+      <input type="text" name="account_password" id="account_password" 
+             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required>
+      <div class="password-description">
+        <p id="psw-exp">Password must be a minimum of 12 characters and include 1 uppercase letter, 1 number, and 1 special character.</p>
+      </div>
+      <button type="button" id="show-password" onclick="togglePassword()">Show Password</button><br>
+      <button type="submit" id="register-button">Register</button><br>
+    </form>
+  </div>

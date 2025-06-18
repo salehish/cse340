@@ -1,0 +1,52 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+  <% } %>
+  
+  <%- messages() %>
+  
+  <% if (errors) { %>
+    <ul class="notice">
+      <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+<div class="formElementUpdate">
+  <form action="/account/update" method="post" id="accountUpdateForm">
+    <input type="hidden" name="account_id" value="<%= account_id %>">
+  
+    <label for="account_firstname">First Name:</label>
+    <input type="text" id="account_firstname" name="account_firstname" required minlength="2" pattern="^[A-Za-z]+$" title="Only letters, minimum of 2 characters" value="<%= account_firstname %>">
+  
+    <label for="account_lastname">Last Name:</label>
+    <input type="text" id="account_lastname" name="account_lastname" required minlength="2" pattern="^[A-Za-z]+$" title="Only letters, minimum of 2 characters" value="<%= account_lastname %>">
+  
+    <label for="account_email">Email:</label>
+    <input type="email" id="account_email" name="account_email" required value="<%= account_email %>">
+  
+    <button type="submit" id="updateAccountBtn" disabled>Update Account</button>
+  </form>
+    <h2>To Update Password</h2>
+  <!-- Change Password Form -->
+  <form action="/account/update-password" method="post" id="changePasswordForm">
+    <input type="hidden" name="account_id" value="<%= account_id %>">
+  
+    <label for="account_password">New Password:</label>
+    <input type="password" id="account_password" name="account_password"
+          pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{12,}$"
+          required
+          title="Password must be at least 12 characters and include 1 uppercase letter, 1 number, and 1 special character.">
+      <div class="password-description">
+            <p id="psw-exp">Password must be a minimum of 12 characters and include 1 uppercase letter, 1 number, and 1 special character.</p><hr>
+            <p class="form-note">
+              By entering a new password, you will change your current password.
+              Password must be at least 12 characters and include 1 uppercase letter, 1 number, and 1 special character.
+            </p>
+      </div>
+  
+    <button type="submit" id="changePasswordBtn">Change Password</button>
+  </form>
+</div>    
+  
+  <script src="/js/account-update.js"></script>
+  

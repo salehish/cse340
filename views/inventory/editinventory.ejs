@@ -1,0 +1,51 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+<% } else {
+    res.redirect('/inv/edit/')
+} %>
+
+
+<%- messages() %>
+<% if (errors) { %>
+  <ul class="notice">
+      <% errors.array().forEach(error => { %>
+          <li><%= error.msg %></li>
+      <% }) %>
+  </ul>
+<% } %>
+<form action="/inv/update/" method="post" id="updateForm">
+    <input type="hidden" name="inv_id"
+    <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+    <% } %>>
+    <label for="make">Make:</label>
+    <input type="text" id="make" name="inv_make" required minlength="3" pattern="^[a-z]+$" title="Only lowercase letters, minimum of 3 characters, no spaces" value="<%= inv_make %>">
+
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="inv_model" required minlength="3" pattern="^[A-Za-z]+$" title="Only letters, minimum of 3 characters, no spaces" value="<%= inv_model %>">
+
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="inv_year" required pattern="^\d{4}$" title="Please enter a 4-digit year" value="<%= inv_year %>">
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="inv_description" required minlength="3" title="Minimum of 3 characters"><%= inv_description %></textarea>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="inv_price" required min="0" step="0.01" title="Enter a valid price (decimal or integer)" value="<%= inv_price %>">
+
+    <label for="miles">Miles:</label>
+    <input type="number" id="miles" name="inv_miles" required min="0" title="Enter miles as a number" value="<%= inv_miles %>">
+
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="inv_color" required minlength="3" pattern="^[A-Za-z]+$" title="Only letters, minimum of 3 characters" value="<%= inv_color %>">
+
+    <label for="image">Image Path:</label>
+    <input type="text" id="image" name="inv_image" required pattern="^/images/vehicles/no-image\.jpg$" title="Path must be '/images/vehicles/no-image.jpg'" value="<%- inv_image %>">
+
+    <label for="thumbnail">Thumbnail Path:</label>
+    <input type="text" id="thumbnail" name="inv_thumbnail" required pattern="^/images/vehicles/no-image\.jpg$" title="Path must be '/images/vehicles/no-image.jpg'" value="<%- inv_thumbnail %>">
+
+    <input type="hidden" name="classification_id" value="<%= classification_id %>">
+
+    <button type="submit" disabled>Update Vehicle</button>
+</form>
+<script src="/js/inv-update.js"></script>

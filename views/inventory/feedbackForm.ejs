@@ -1,0 +1,55 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else { %>
+  <% res.redirect('/') %>
+<% } %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
+<div class="form-container">
+  <form action="/inv/feedback" id="feedbackForm" method="POST" novalidate>
+    <p>All fields are required.</p>
+    <div id="feedbackFormArea">
+      <!-- Hidden field to store inv_id -->
+      <input type="hidden" name="inv_id" value="<%= locals.inv_id || '' %>" />
+  
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="account_email"
+        name="account_email"
+        required
+        value="<%= locals.account_email || '' %>"
+      /><br>
+  
+      <label for="phone">Phone Number:</label><br>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        pattern="^\+?[0-9\s\-]{7,15}$"
+        title="Enter a valid phone number: 7-15 digits, optional +, spaces or hyphens"
+        value="<%= locals.phone || '' %>"
+      /><br>
+  
+      <label for="message">Message:</label><br>
+      <textarea
+        id="message"
+        name="message"
+        required
+        minlength="10"
+        title="Message must be at least 10 characters long"
+      ><%= locals.message || '' %></textarea><br>
+  
+      <button type="submit">Send Inquiry</button>
+    </div>
+  </form>  
+</div>
