@@ -1,5 +1,4 @@
 const pool = require("../database/index")
-
 /* *****************************
 *   Register new account
 * *************************** */
@@ -11,7 +10,6 @@ async function registerAccount(account_firstname, account_lastname, account_emai
       return error.message
     }
   }
-
 /* **********************
  *   Check for existing email
  * ********************* */
@@ -24,8 +22,6 @@ async function checkExistingEmail(account_email){
     return error.message
   }
 }  
-
-
 
 async function getAccountByEmail (account_email) {
   try {
@@ -51,7 +47,6 @@ async function getAccountById(accountId) {
   }
 }
 
-
 async function updateAccount(account_id, account_firstname, account_lastname, account_email) {
   try {
     const sql = `
@@ -63,15 +58,12 @@ async function updateAccount(account_id, account_firstname, account_lastname, ac
       RETURNING *`;
     const values = [account_firstname, account_lastname, account_email, account_id];
     const result = await pool.query(sql, values);
-    return result.rows[0]; // Return the updated account data
+    return result.rows[0]; 
   } catch (error) {
     console.error("Model error: " + error);
     throw new Error("Failed to update account");
   }
 }
-
-
-
 
 async function updatePassword(account_id, hashedPassword) {
   try {

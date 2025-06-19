@@ -26,7 +26,6 @@ Util.getNav = async function () {
   return list
 }
 
-
 /* **************************************
 * Build the classification view HTML
 * ************************************ */
@@ -60,12 +59,7 @@ Util.buildClassificationGrid = async function(data){
     return grid
   }
 
-
-
-
-
-
-  Util.buildCarDetailsDisplay = async function(data) {
+Util.buildCarDetailsDisplay = async function(data) {
     console.log(data)
     return `
       <div class="inventory-details">

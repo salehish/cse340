@@ -1,6 +1,4 @@
 const pool = require("../database")
-
-
 /* *****************************
 *  Add new Classification
 * *************************** */
@@ -14,7 +12,6 @@ async function addNewClassification(classification_name) {
         throw new Error("Could not add classification"); 
     }
 }
-
 
 
 module.exports = {addNewClassification}

@@ -16,7 +16,6 @@ classController.newClassification = async function(req,res) {
     )
 }
 
-
 // clasCont.addNewCar = async function(req,res) {
 //     const nav = await utilities.getNav()
 //     const addNewCar = await utilities.buildAddNewCar()
@@ -27,8 +26,6 @@ classController.newClassification = async function(req,res) {
 //         }
 //     )
 // }
-
-
 
 classController.addNewClassification = async function (req, res) {
     let nav = await utilities.getNav();
@@ -82,8 +79,7 @@ classController.addNewClassification = async function (req, res) {
     }
   }
 
-
-// clasCont.addNewCar = async function(req,res) {
+  // clasCont.addNewCar = async function(req,res) {
 //     const nav = await utilities.getNav()
 //     const addNewCar = await utilities.buildAddNewCar()
 //     res.render("./inventory/newcar",{

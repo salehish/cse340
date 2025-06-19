@@ -21,11 +21,9 @@ invCont.buildByClassificationId = async function (req, res, next) {
   })
 }
 
-
  /* ***************************
  *  Build car Details by inventory id view
  * ************************** */
-
  invCont.buildByInventoryId = async function (req, res, next) {
     const inventory_id = req.params.inventoryId
     const data = await invModel.getInventoryByInventoryId(inventory_id)
@@ -43,7 +41,6 @@ invCont.buildByClassificationId = async function (req, res, next) {
     })
   }
   
-
 /**********
  
 Build and Deliver management view
@@ -65,9 +62,7 @@ invCont.deliverManagementView = async function (req, res) {
   )
 }
 
-
 //handling displaying the car form
-
 invCont.newCar = async function(req,res) {
   const nav = await utilities.getNav()
   const classificationList = await utilities.buildClassificationList()
@@ -80,10 +75,7 @@ invCont.newCar = async function(req,res) {
   )
 }
 
-
-
 //handling the adding new car to the database.
-
 invCont.addNewCar = async function (req, res) {
   let nav = await utilities.getNav();
   let classificationList = await utilities.buildClassificationList()
@@ -151,8 +143,6 @@ invCont.addNewCar = async function (req, res) {
   }
 }
 
-
-
 invCont.getInventoryJSON = async (req, res, next) => {
   const classification_id = parseInt(req.params.classification_id)
   const invData = await invModel.getInventoryByClassificationId(classification_id)
@@ -164,7 +154,6 @@ invCont.getInventoryJSON = async (req, res, next) => {
 }
 
 //Inventory processing updating the item
-
 invCont.editInventoryItem = async function (req, res, next) {
   const inv_id = parseInt(req.params.inv_id)
   const nav = await utilities.getNav()
@@ -190,10 +179,7 @@ invCont.editInventoryItem = async function (req, res, next) {
     classification_id: itemData[0].classification_id
   })
 }
-
-
-
- /* ***************************
+/* ***************************
  *  Update Inventory Data
  * ************************** */
  invCont.updateInventory = async function (req, res, next) {
@@ -262,10 +248,7 @@ invCont.editInventoryItem = async function (req, res, next) {
   }
 }
 
-
-
 //Inventory processing delete the item
-
 invCont.deleteInventoryItem = async function (req, res, next) {
   const inv_id = parseInt(req.params.inv_id)
   const nav = await utilities.getNav()
@@ -292,10 +275,7 @@ invCont.deleteInventoryItem = async function (req, res, next) {
   })
 }
 
-
-
-
- /* ***************************
+/* ***************************
  *  Delete Inventory Data
  * ************************** */
  invCont.deleteInventory = async function (req, res, next) {
@@ -355,10 +335,7 @@ invCont.deleteInventoryItem = async function (req, res, next) {
   }
 }
 
-
-
 // controllers/invController.js
-
 invCont.dealerForm = async (req, res, next) => {
   let nav = await utilities.getNav();
   try {
@@ -426,7 +403,6 @@ invCont.submitFeedback = async (req, res, next) => {
   }
 
 }
-
 
 invCont.showFeedbackPage = async (req, res, next) => {
   try {

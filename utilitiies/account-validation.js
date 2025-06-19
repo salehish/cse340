@@ -3,8 +3,7 @@ const utilities = require(".")
 const { body, validationResult } = require("express-validator")
 const validate = {}
 
-
-  /*  **********************************
+/*  **********************************
   *  Registration Data Validation Rules
   * ********************************* */
   validate.registationRules = () => {
@@ -54,8 +53,7 @@ const validate = {}
     ]
   }
 
-
-/* ******************************
+  /* ******************************
  * Check data and return errors or continue to registration
  * ***************************** */
 validate.checkRegData = async (req, res, next) => {
@@ -77,8 +75,7 @@ validate.checkRegData = async (req, res, next) => {
     next()
   }
 
-
- /*  **********************************
+  /*  **********************************
   *  login Data Validation Rules
   * ********************************* */
  validate.loginRules = () => {
@@ -207,10 +204,7 @@ validate.newCarRules = () => {
   ]
 };
 
-
-
-  
-  /* ******************************
+ /* ******************************
  * Check data and return errors or continue to classification
  * ***************************** */
   validate.checknewCarData = async (req, res, next) => {
@@ -253,14 +247,11 @@ validate.newCarRules = () => {
       });
       return;
     }
-    
-    // If no errors, proceed to the next middleware
+        // If no errors, proceed to the next middleware
     next();
   };
 
-
-  
-  // Rules for the Classification form
+// Rules for the Classification form
   validate.classificationRules = () => {
     return [
       body("classification_name")
@@ -323,7 +314,6 @@ validate.newCarRules = () => {
     ];
   };
   
-
 // Check for data errors and render view
 validate.checkUpdateAccountData = async (req, res, next) => {
   const {
@@ -352,8 +342,6 @@ validate.checkUpdateAccountData = async (req, res, next) => {
   next();
 };
 
-
-
 // Password validation rules
 validate.updatePasswordRules = () => {
   return [
@@ -377,7 +365,6 @@ validate.updatePasswordRules = () => {
       .withMessage('Password does not meet requirements.'),
   ];
 };
-
 
 // Check password data
 validate.checkUpdatePasswordData = async (req, res, next) => {

@@ -1,6 +1,5 @@
 
 const pool = require("../database/")
-
 /* ***************************
  *  Get all classification data
  * ************************** */
@@ -9,8 +8,6 @@ async function getClassifications(){
     `SELECT * FROM public.classification ORDER BY classification_name`
   )
 }
-
-
 /* ***************************
  *  Get all inventory items and classification_name by classification_id
  * ************************** */
@@ -28,10 +25,7 @@ async function getInventoryByClassificationId(classification_id) {
       console.error("getclassificationsbyid error " + error)
     }
   }
-
-
-
-  /* ***************************
+ /* ***************************
  *  Get all car details from the inventory table by inventory_id
  * ************************** */  
 async function getInventoryByInventoryId(inventory_id) {
@@ -47,12 +41,7 @@ async function getInventoryByInventoryId(inventory_id) {
       console.error("getinventorybyid error " + error)
     }
   }
-
-
-
-
-  
-  /* ***************************
+/* ***************************
  *  Get all car details from the inventory table by inventory_id
  * ************************** */  
 async function getInventoryByInventoryId1(inventory_id) {
@@ -68,7 +57,6 @@ async function getInventoryByInventoryId1(inventory_id) {
     console.error("getinventorybyid error " + error)
   }
 }
-  
 //Insert Query for adding new car.
 async function addNewCar(classification_id, inv_make, inv_model, inv_description, inv_image, inv_path, inv_price, inv_year, inv_miles, inv_color) {
   try {
@@ -86,8 +74,6 @@ async function addNewCar(classification_id, inv_make, inv_model, inv_description
       throw error; 
   }
 }
-
-
 /* ***************************
  *  Update Inventory Data
  * ************************** */
@@ -125,9 +111,6 @@ async function updateInventory(
     console.error("model error: " + error)
   }
 }
-
-
-
 /* ***************************
  *  Delete Inventory Item
  * ************************** */
@@ -140,9 +123,6 @@ async function deleteInventory(inv_id) {
     new Error("Delete Inventory Error")
   }
 }
-
-
-
 /* ***************************
  *  Insert Feedback Data
  * ************************** */
@@ -169,8 +149,6 @@ async function insertFeedback(
     throw error;
   }
 }
-
-
 
 async function getAllFeedback() {
   try {

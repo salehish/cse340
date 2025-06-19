@@ -20,12 +20,12 @@ async function buildLoginView(req, res, next) {
 
 
 
-  /* ****************************************
+/* ****************************************
 *  Deliver Register view
 * *************************************** */
 async function buildRegisterView(req, res, next) {
   let nav = await utilities.getNav()
-  //let RegisterForm = await utilities.buildRegisterForm()
+ //let RegisterForm = await utilities.buildRegisterForm()
   res.render("account/register", {
     title: "Register",
     nav,
@@ -43,7 +43,7 @@ async function registerAccount(req, res) {
 
      let hashedPassword 
   try {
-    // regular password and cost (salt is generated automatically)
+  // regular password and cost (salt is generated automatically)
     hashedPassword = await bcrypt.hashSync(account_password, 10)
   } catch (error) {
     req.flash("notice", 'Sorry, there was an error processing the registration.')
@@ -72,7 +72,7 @@ async function registerAccount(req, res) {
       errors: null
     })
   } else {
-    req.flash("notice", "Sorry, the registration failed.")
+    req.flash("notice", "Sorry, the registration has failed.")
     res.status(501).render("account/register", {
       title: "Registration",
       nav,

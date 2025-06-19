@@ -75,9 +75,7 @@ validate.UpdateInventoryRules = () => {
     ];
   };
 
-  
-
-// check for data errors and render view
+  // check for data errors and render view
 validate.CheckUpdateData = async (req, res, next) => {
     const {
       inv_id,
@@ -118,11 +116,7 @@ validate.CheckUpdateData = async (req, res, next) => {
     next();
   };
   
-
-
-
-
-// Validation rules for feedback form
+  // Validation rules for feedback form
 validate.FeedbackValidationRules = () => {
   return [
     body('inv_id')
@@ -175,7 +169,6 @@ validate.CheckFeedbackData = async (req, res, next) => {
 
   next();
 };
-
 
 
 module.exports = validate

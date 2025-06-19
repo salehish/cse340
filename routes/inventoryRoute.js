@@ -31,7 +31,8 @@ router.post("/update/",
   utilities.handleErrors(invController.updateInventory)
 )
 
-// Protected - delete form
+// Protect
+// d - delete form
 router.get("/delete/:inv_id", checkEmployeeOrAdmin.checkEmployeeOrAdmin, utilities.handleErrors(invController.deleteInventoryItem))
 
 // Protected - process delete
