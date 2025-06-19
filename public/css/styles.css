@@ -408,7 +408,7 @@ footer p{
   margin-left: 1.2rem;
   margin-bottom: 1rem;
   margin-top: -0.5rem;
-  color: #01B0D2;
+  color: #1801eb;
 }
 
 .error-link a{
@@ -530,7 +530,7 @@ input[type="email"], input[type="text"]{
 /* Styling invalid form inputs */
 input:focus:invalid {
     border: 2px solid white; 
-    background-color: rgba(0, 128, 0, 0.377); 
+    background-color: rgba(0, 59, 0, 0.377); 
     outline: none; 
     box-shadow: 0 0 5px rgba(230, 57, 70, 0.5); 
     cursor: not-allowed; 
@@ -641,7 +641,7 @@ form#newCarForm label {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: rgb(7, 1, 94);
+  color: rgb(6, 0, 68);
 }
 
 /* Labels */
@@ -659,7 +659,7 @@ form#newCarForm textarea,
 form#newCarForm select {
   width: 100%;
   padding: 0.6rem;
-  border: 1px solid #ccc;
+  border: 1px solid #0e0d0d;
   border-radius: 6px;
   font-size: 1rem;
   box-sizing: border-box;
@@ -784,7 +784,7 @@ Styling for a feedback List Page
 .action{
   color: black;
   padding: 0.9rem;
-  background-color: #010cb3;
+  background-color: #01075a;
   width: 15rem;
   font-size: 2rem;
   font-weight: bold;
