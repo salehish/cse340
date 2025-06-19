@@ -1,11 +1,11 @@
 // Needed Resources 
 const express = require("express")
 const router = new express.Router() 
-const utilities = require("../utilitiies/")
+const utilities = require("../utilities/")
 const classController = require("../controllers/classController")
 const baseController = require("../controllers/basaController")
 const invController = require("../controllers/invController")
-const regValidate = require('../utilitiies//account-validation')
+const regValidate = require('../utilities//account-validation')
 
 router.get("/", utilities.handleErrors(baseController.buildHome))
 

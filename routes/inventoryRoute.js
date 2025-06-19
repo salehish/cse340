@@ -2,11 +2,11 @@
 const express = require("express")
 const router = new express.Router() 
 const invController = require("../controllers/invController")
-const utilities = require("../utilitiies/")
-const updateValidate = require("../utilitiies/inventory-validation")
+const utilities = require("../utilities/")
+const updateValidate = require("../utilities/inventory-validation")
 //const classController = require("../controllers/classController")
-const checkEmployeeOrAdmin = require("../utilitiies/")
-const validate = require("../utilitiies/account-validation")
+const checkEmployeeOrAdmin = require("../utilities/")
+const validate = require("../utilities/account-validation")
 
 // Public route - classification view
 router.get("/type/:classificationId", invController.buildByClassificationId);

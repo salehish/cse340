@@ -1,5 +1,5 @@
 
-const utilities = require("../utilitiies/")
+const utilities = require("../utilities/")
 const classfModel = require("../models/classification-model")
 
 const classController = {}

@@ -3,8 +3,8 @@
 const express = require("express")
 const router = new express.Router()
 const accountController = require("../controllers/accountController")
-const utilities = require("../utilitiies/")
-const regValidate = require('../utilitiies/account-validation')
+const utilities = require("../utilities/")
+const regValidate = require('../utilities/account-validation')
 
 // //Route to get the login page
 router.get("/login", utilities.handleErrors(accountController.buildLoginView))
