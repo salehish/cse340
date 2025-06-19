@@ -3,7 +3,7 @@
  ***************************************/
 
 require('dotenv').config()
-console.log('SESSION_SECRET loaded:', process.env.SESSION_SECRET ? '✅ Loaded' : '❌ MISSING!')
+console.log('SESSION_SECRET loaded:', process.env.SESSION_SECRET )
 
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
