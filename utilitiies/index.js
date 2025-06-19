@@ -89,7 +89,7 @@ Util.buildClassificationGrid = async function(data){
               <p>${data.inv_color}</p>
             </div>
             <div class="contact">
-              <h3>Contact us at +256758116304</h3>
+              <h3>Contact us at +256701952380</h3>
               <a class="dealer" href="/inv/dealer/${data.inv_id}">Start Inquiry</a>
               <button class="purchase">Start-Purchase</button>
             </div>
