@@ -107,6 +107,7 @@ app.use(async (err, req, res, next) => {
 /* ***********************
  * Log statement to confirm server operation
  *************************/
-app.listen(port, host, () => {
-  console.log(` App listening on ${host}:${port}`)
+
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`)
 })
