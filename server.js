@@ -20,9 +20,6 @@ const bodyParser = require("body-parser")
 const routeIndex = require("./routes/")
 const cookieParser = require("cookie-parser")
 
-
-
-
 /* ***********************
  * Middleware
  * ************************/
