@@ -24,6 +24,7 @@ const utilities = require("./utilities/")
 // Initialize Express app
 const app = express()
 
+app.use(express.static("public"))
 /***************************************
  * Middleware
  ***************************************/
